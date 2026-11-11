@@ -77,12 +77,17 @@ typedef enum
 #define LED_SIMERR_PERIOD_MS    600
 #define LED_SIMERR_ON_MS        100
 
-#define LED_SLOW_PERIOD_MS      900    /* searching */
-#define LED_SLOW_ON_MS          300
+/* Network searching: slow blink */
+#define LED_SLOW_PERIOD_MS      1000
+#define LED_SLOW_ON_MS          500
 
-#define LED_SPEED_PERIOD_MS     125     /* publish: fast blink */
-#define LED_SPEED_ON_MS         62
+/* Network registered / MQTT connected: fast blink */
+#define LED_CONNECTED_PERIOD_MS 400
+#define LED_CONNECTED_ON_MS     200
 
+/* Successful MQTT publish: fastest blink */
+#define LED_SPEED_PERIOD_MS     200
+#define LED_SPEED_ON_MS         100
 /* =========================================================================
  * API
  * ========================================================================= */

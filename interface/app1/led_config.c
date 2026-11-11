@@ -29,8 +29,18 @@ typedef struct
 
 // static const led_pattern_t PAT_OFF    = { 0, 0 };
 static const led_pattern_t PAT_SIMERR = { LED_SIMERR_PERIOD_MS, LED_SIMERR_ON_MS };
-static const led_pattern_t PAT_SLOW   = { LED_SLOW_PERIOD_MS,   LED_SLOW_ON_MS   };
-static const led_pattern_t PAT_SPEED  = { LED_SPEED_PERIOD_MS,  LED_SPEED_ON_MS  };
+
+static const led_pattern_t PAT_SLOW = {
+    LED_SLOW_PERIOD_MS, LED_SLOW_ON_MS
+};
+
+static const led_pattern_t PAT_CONNECTED = {
+    LED_CONNECTED_PERIOD_MS, LED_CONNECTED_ON_MS
+};
+
+static const led_pattern_t PAT_SPEED = {
+    LED_SPEED_PERIOD_MS, LED_SPEED_ON_MS
+};
 
 static ql_task_t                s_led_task    = NULL;
 static volatile led_state_e     s_state       = LED_ST_SEARCHING;
@@ -194,20 +204,23 @@ static void led_thread(void *param)
                 break;
 
             case LED_ST_REGISTERED:
-            case LED_ST_ONLINE:
-            default:
-                solid_on = 1;
-                if (s_activity_ms > 0)
-                {
-                    p = &PAT_SPEED;      /* fast blink after a publish */
-                    s_activity_ms = (s_activity_ms > LED_TICK_MS) ?
-                                    (s_activity_ms - LED_TICK_MS) : 0;
-                }
-                else
-                {
-                    p = &PAT_SLOW;
-                }
-                break;
+           case LED_ST_ONLINE:
+default:
+    solid_on = 1;
+
+    if (s_activity_ms > 0)
+    {
+        /* Fastest blink after successful MQTT publish */
+        p = &PAT_SPEED;
+
+        s_activity_ms = (s_activity_ms > LED_TICK_MS) ?
+                        (s_activity_ms - LED_TICK_MS) : 0;
+    }
+    else
+    {
+        p = &PAT_CONNECTED;
+    }
+    break;
         }
 
         if (p != last_p)
