@@ -23,6 +23,7 @@
 #include "main_app.h"
 #include "inverter_app.h"
 #include "mqtt_app.h"
+#include "led_config.h"
 
 
 #define QL_VIRT_AT_RX_BUFF_SIZE   1024
@@ -70,6 +71,7 @@ void main_app_thread(void *arg)
     // Read_Init_Data();
     ql_rtos_task_sleep_ms(5000);
 
+    led_config_init();          /* <-- ADD: starts the LED task */
 
     dev_info();
     ql_rtos_task_sleep_s(15);

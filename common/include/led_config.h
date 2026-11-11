@@ -74,11 +74,11 @@ typedef enum
 /* =========================================================================
  * Blink patterns on GPIO68: period / on-time in ms
  * ========================================================================= */
-#define LED_SIMERR_PERIOD_MS    1000
+#define LED_SIMERR_PERIOD_MS    600
 #define LED_SIMERR_ON_MS        100
 
-#define LED_SLOW_PERIOD_MS      2000    /* searching */
-#define LED_SLOW_ON_MS          500
+#define LED_SLOW_PERIOD_MS      900    /* searching */
+#define LED_SLOW_ON_MS          300
 
 #define LED_SPEED_PERIOD_MS     125     /* publish: fast blink */
 #define LED_SPEED_ON_MS         62

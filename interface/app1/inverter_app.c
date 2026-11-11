@@ -178,8 +178,9 @@ unsigned char External_CT_Flag[]                            =   {0x03, 0x00, 0x1
  * GPIO / pin macros
  * ========================================================================= */
 // #define RI_DI_Pin               GPIO_PIN_NO_68
-#define SET_RI_DI                do {} while (0)
-#define RESET_RI_DI              do {} while (0)
+#define RS485_RE_DE_PIN    GPIO_PIN_NO_35
+#define SET_RI_DI                RS485_TX_Enable()
+#define RESET_RI_DI              RS485_RX_Enable()
 
 // #define COMMUNICATION_LED_Pin   GPIO_PIN_NO_70
 #define COMM_LED_ON              do {} while (0)
@@ -275,6 +276,23 @@ enum {
 /* =========================================================================
  * decimalToBinary — find lowest set bit index (used by fault decoding).
  * ========================================================================= */
+void RS485_GPIO_Init(void)
+{
+    ql_gpio_init(RS485_RE_DE_PIN,
+                 PIN_DIRECTION_OUT,
+                 PIN_PULL_DISABLE,
+                 PIN_LEVEL_LOW);
+}
+
+void RS485_TX_Enable(void)
+{
+    ql_gpio_set_level(RS485_RE_DE_PIN, PIN_LEVEL_HIGH);
+}
+
+void RS485_RX_Enable(void)
+{
+    ql_gpio_set_level(RS485_RE_DE_PIN, PIN_LEVEL_LOW);
+}
 int decimalToBinary(unsigned long int num)
 {
     int binary[32];
@@ -347,6 +365,7 @@ void ql_uart_notify_cb(QL_UART_PORT_NUMBER_E port, void *para)
 static void inverter_app_thread(void *arg)
 {
     UART_Init();
+    RS485_GPIO_Init();
     ql_rtos_task_sleep_ms(1000);
 
     while (1)
@@ -1674,6 +1693,13 @@ void UART_Init(void)
     printf("UART INITIALIZE (inverter, Modbus RTU 9600-8-N-1)");
 
     ql_uart_write(INVERTER_UART_PORT, data, sizeof(data));
+    ql_uart_write(INVERTER_UART_PORT, data, sizeof(data));
+    ql_uart_write(INVERTER_UART_PORT, data, sizeof(data));
+
+
+    printf("UART INITIALIZE (inverter, Modbus RTU 9600-8-N-1 data = %s)",data);
+
+
 }
 
 /* =========================================================================
@@ -1683,7 +1709,6 @@ int inverter_app_init(void)
 {
     int err=0;
     static ql_task_t inverter_task_t = NULL;
-    led_config_init();          /* <-- ADD: starts the LED task */
     err = ql_rtos_task_create(&inverter_task_t, 16 * 1024,100,"Inverter_app_comm",inverter_app_thread,NULL, 2);
     if (err != 0)
     {

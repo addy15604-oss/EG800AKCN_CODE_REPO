@@ -169,7 +169,7 @@ static void led_thread(void *param)
     /* boot self-test: both LEDs ON for 1 s */
     if (s_blink_ok) LED_BLINK_ON;
     if (s_solid_ok) LED_SOLID_ON;
-    ql_rtos_task_sleep_ms(1000);
+    ql_rtos_task_sleep_ms(400);
     if (s_blink_ok) LED_BLINK_OFF;
     if (s_solid_ok) LED_SOLID_OFF;
 
