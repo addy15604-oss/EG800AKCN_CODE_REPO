@@ -1,0 +1,57 @@
+/*==========================================================================================================
+  Copyright (c) 2021, Quectel Wireless Solutions Co., Ltd. All rights reserved.
+  Quectel Wireless Solutions Proprietary and Confidential.
+===========================================================================================================*/
+
+#include <stdio.h>
+#include <string.h>
+#include "ql_rtos.h"
+#include "ql_application.h"
+#include "ql_type.h"
+
+static void app1_task1(void *argv)
+{
+
+    // 使用内核函数表中的trace函数
+    if(ql_trace)
+    {
+        
+        ql_trace("APP1 Task1 Started!\r\n");
+        ql_trace("APP1: Using kernel function table for trace\r\n");
+    }
+    
+    while(1)
+    {
+        if(ql_trace)
+        {
+            ql_trace("APP1 Task1 is running...\r\n");
+        }  
+        ql_rtos_task_sleep_s(2);  // 每2秒打印一次(验证内核API接口是否可用)
+    }
+    
+    ql_rtos_task_delete(NULL);
+}
+
+static void app1_task2(void *argv)
+{
+    if(ql_trace)
+    {
+        ql_trace("APP1 Task2 Started!\r\n");
+        ql_trace("APP1: Task2 also using kernel function table\r\n");
+    }
+    
+    while(1)
+    {
+        if(ql_trace)
+        {
+            ql_trace("APP1 Task2 is running...\r\n");
+        }
+        
+        ql_rtos_task_sleep_s(3);  // 每3秒打印一次
+    }
+    
+    ql_rtos_task_delete(NULL);
+}
+
+// application_init(app1_task1, "app1_task1", 10, 0); 
+// application_init(app1_task2, "app1_task2", 10, 0); 

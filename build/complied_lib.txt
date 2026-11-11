@@ -1,0 +1,5 @@
+  
+D:/Ritik/EG800G-MNRE-Project/LTE01R07A16V03_C_SDK_A_SDK/ql-sdk/ql-application/threadx/interface/wifi//build/wifi.lib  
+D:/Ritik/EG800G-MNRE-Project/LTE01R07A16V03_C_SDK_A_SDK/ql-sdk/ql-application/threadx/interface/usbnet//build/usbnet.lib  
+D:/Ritik/EG800G-MNRE-Project/LTE01R07A16V03_C_SDK_A_SDK/ql-sdk/ql-application/threadx/interface/fpu//build/fpu.lib  
+D:/Ritik/EG800G-MNRE-Project/LTE01R07A16V03_C_SDK_A_SDK/ql-sdk/ql-application/threadx/interface/app1//build/app1.lib  
