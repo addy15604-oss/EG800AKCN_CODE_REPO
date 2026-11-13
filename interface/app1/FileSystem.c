@@ -24,9 +24,8 @@
 #include "inverter_app.h"
 // #include "gps.h"
 #include "mqtt_app.h"
-#include "fota_f.h"
 #include "fota_http.h"      /* HTTP_DLOAD_URL, HTTP_FILE_NAME */
-#include "inverterOta.h"
+#include "inverterOta_app.h"
 
 #define FS_LOG(fmt, ...)    printf("[FS][%s,%d] " fmt "\r\n", __FUNCTION__, __LINE__, ##__VA_ARGS__)
 
@@ -509,14 +508,14 @@ void Read_Init_Data()
     }
 
     /* 8: module OTA file path */
-    fs_read_key(8, READ_UFS_DATA, sizeof(READ_UFS_DATA));
-    FS_LOG("STORED_MODULE_OTA_FILE_PATH_UFS:%s", READ_UFS_DATA);
-    if (strlen(READ_UFS_DATA) > 1)
-    {
-        strcpy(file_full_path, READ_UFS_DATA);
-        strcpy(HTTP_FILE_NAME, READ_UFS_DATA);
-        FS_LOG("UPDATED FILE PATH:%s", file_full_path);
-    }
+    // fs_read_key(8, READ_UFS_DATA, sizeof(READ_UFS_DATA));
+    // FS_LOG("STORED_MODULE_OTA_FILE_PATH_UFS:%s", READ_UFS_DATA);
+    // if (strlen(READ_UFS_DATA) > 1)
+    // {
+    //     strcpy(file_full_path, READ_UFS_DATA);
+    //     strcpy(HTTP_FILE_NAME, READ_UFS_DATA);
+    //     FS_LOG("UPDATED FILE PATH:%s", file_full_path);
+    // }
 
     /* 9: storing interval */
     fs_read_key(9, READ_UFS_DATA, sizeof(READ_UFS_DATA));

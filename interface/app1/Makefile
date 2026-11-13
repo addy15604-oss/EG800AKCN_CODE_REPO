@@ -17,7 +17,7 @@ SRC_FILES+= \
  led_config.c\
  fota_http.c\
  FileSystem.c\
- fota_f.c\
+ inverterOta_app.c\
  
 
 #-------------------------------------------------------------------------------

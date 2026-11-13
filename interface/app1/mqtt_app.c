@@ -853,30 +853,30 @@ void Seprate_Key_Value(char *Key, char *Value)
          CORRECT_MAC_ID = FALSE;
     }
 
-//     if(strcmp(Key,"HMI_OTA" ) == 0 && (CORRECT_MAC_ID == TRUE))
-//     {
-//         QL_MQTT_LOG("HMI_OTA\r\n");
-//         if (strcmp(Value, "1") == 0)
-//         {
-//             if(PARAM_WRITE_FLAG == TRUE){
-//                 IsConfigTrue = 1;
-//                 IsProcessDone = 1;
-//                 MQTT_STR_FLAG = TRUE;
-//                 strcpy(CONFIG_VAR_NAME, Key);
-//                 strcpy(CONFIG_VAR_STR, "1");
-//                 Fota_Restart_Flag = 1;
-//                 WriteFileUFS("1",6);
-//             }
-//             else{
-//                 IsConfigTrue = 1;
-//                 IsProcessDone = 1;
-//                 MQTT_STR_FLAG = TRUE;
-//                 strcpy(CONFIG_VAR_NAME, Key);
-//                 strcpy(CONFIG_VAR_STR, "0");
-//             }
-//         }
-//          CORRECT_MAC_ID = FALSE;
-//     }
+    if(strcmp(Key,"HMI_OTA" ) == 0 && (CORRECT_MAC_ID == TRUE))
+    {
+        QL_MQTT_LOG("HMI_OTA\r\n");
+        if (strcmp(Value, "1") == 0)
+        {
+            if(PARAM_WRITE_FLAG == TRUE){
+                IsConfigTrue = 1;
+                IsProcessDone = 1;
+                MQTT_STR_FLAG = TRUE;
+                strcpy(CONFIG_VAR_NAME, Key);
+                strcpy(CONFIG_VAR_STR, "1");
+                Fota_Restart_Flag = 1;
+                WriteFileUFS("1",6);
+            }
+            else{
+                IsConfigTrue = 1;
+                IsProcessDone = 1;
+                MQTT_STR_FLAG = TRUE;
+                strcpy(CONFIG_VAR_NAME, Key);
+                strcpy(CONFIG_VAR_STR, "0");
+            }
+        }
+         CORRECT_MAC_ID = FALSE;
+    }
 
 // //////////////////////////////////////// HTTP FILE PATH /////////////////////////////////////////////////
 //     if (strcmp(Key, "OTA_FILE") == 0 && (CORRECT_MAC_ID == TRUE))

@@ -13,15 +13,15 @@
  * EG800 UART configuration — change here if wiring changes.
  * ========================================================================= */
 #define INVERTER_UART_PORT          QL_MAIN_UART_PORT
-#define INVERTER_UART_BAUD          QL_UART_BAUD_9600
+#define INVERTER_UART_BAUD          QL_UART_BAUD_115200
 
 /* =========================================================================
  * Modbus parameter tables (unchanged from EC200 — register addresses only).
  * ========================================================================= */
-const unsigned char  Inverter_Serial[]                      =   {0x03, 0x00, 0x03, 0x00, 0x05};
+const unsigned char  Inverter_Serial[]                      =   {0x03, 0x00, 0x06, 0x00, 0x09}; //change
 const unsigned char  Comm_Protocal[]                        =   {0x03, 0x00, 0x02, 0x00, 0x01};
 
-const unsigned char  Run_State[]                            =   {0x03, 0x00, 0x3B, 0x00, 0x01};
+const unsigned char  Run_State[]                            =   {0x03, 0x00, 0x21, 0x00, 0x01};//change
 const unsigned char  Date_Time[]                            =   {0x03, 0x00, 0x16, 0x00, 0x03};
 
 const unsigned char  Grid_A_Voltage[]                       =   {0x03, 0x00, 0x49, 0x00, 0x01};
@@ -38,18 +38,18 @@ const unsigned char  Grid_C_Current[]                       =   {0x03, 0x00, 0x4
 
 const unsigned char  Grid_Frequency[]                       =   {0x03, 0x00, 0x4F, 0x00, 0x01};
 
-const unsigned char  DC_Voltage_1[]                         =   {0x03, 0x00, 0x6D, 0x00, 0x01};
-const unsigned char  DC_Voltage_2[]                         =   {0x03, 0x00, 0x6F, 0x00, 0x01};
+const unsigned char  DC_Voltage_1[]                         =   {0x03, 0x00, 0x27, 0x00, 0x02};//change
+const unsigned char  DC_Voltage_2[]                         =   {0x03, 0x00, 0x2F, 0x00, 0x02};//change
 const unsigned char  DC_Voltage_3[]                         =   {0x03, 0x00, 0x71, 0x00, 0x01};
 const unsigned char  DC_Voltage_4[]                         =   {0x03, 0x00, 0x73, 0x00, 0x01};
 
-const unsigned char  DC_Current_1[]                         =   {0x03, 0x00, 0x6E, 0x00, 0x01};
-const unsigned char  DC_Current_2[]                         =   {0x03, 0x00, 0x70, 0x00, 0x01};
+const unsigned char  DC_Current_1[]                         =   {0x03, 0x00, 0x29, 0x00, 0x02};//change
+const unsigned char  DC_Current_2[]                         =   {0x03, 0x00, 0x31, 0x00, 0x02};//change
 const unsigned char  DC_Current_3[]                         =   {0x03, 0x00, 0x72, 0x00, 0x01};
 const unsigned char  DC_Current_4[]                         =   {0x03, 0x00, 0x74, 0x00, 0x01};
 
-const unsigned char  DC_Power_1[]                           =   {0x03, 0x00, 0xBA, 0x00, 0x01};
-const unsigned char  DC_Power_2[]                           =   {0x03, 0x00, 0xBB, 0x00, 0x01};
+const unsigned char  DC_Power_1[]                           =   {0x03, 0x00, 0x2B, 0x00, 0x02};//change
+const unsigned char  DC_Power_2[]                           =   {0x03, 0x00, 0x33, 0x00, 0x02};//change
 const unsigned char  DC_Power_3[]                           =   {0x03, 0x00, 0xBC, 0x00, 0x01};
 const unsigned char  DC_Power_4[]                           =   {0x03, 0x00, 0xBD, 0x00, 0x01};
 
@@ -156,16 +156,16 @@ unsigned char Starting_Voltage_Lower_Limit[]                =   {0x03, 0x00, 0x2
 unsigned char Over_Frequency_Drate_Point[]                  =   {0x03, 0x00, 0x22, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Over_Frequency_Drate[]                        =   {0x03, 0x00, 0x23, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Internal_Temp_Upper_Limit[]                   =   {0x03, 0x00, 0x24, 0x00, 0x01, 0x02, 0x00, 0x00};
-unsigned char Power_Factor_Regulation[]                     =   {0x03, 0x00, 0x27, 0x00, 0x01, 0x02, 0x00, 0x00};
+unsigned char Power_Factor_Regulation[]                     =   {0x03, 0x00, 0x65, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Active_Power_Regulation[]                     =   {0x03, 0x00, 0x28, 0x00, 0x01, 0x02, 0x00, 0x00};
-unsigned char Reactive_Power_Regulation[]                   =   {0x03, 0x00, 0x29, 0x00, 0x01, 0x02, 0x00, 0x00};
+unsigned char Reactive_Power_Regulation[]                   =   {0x03, 0x00, 0x60, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Apparent_Power_Regulation[]                   =   {0x03, 0x00, 0x2A, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Switch_ON_OFF_Enable[]                        =   {0x03, 0x00, 0x2B, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Factory_Reset_Enable[]                        =   {0x03, 0x00, 0x2C, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Self_Checking_Time[]                          =   {0x03, 0x00, 0x2D, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Island_Protection_Enable[]                    =   {0x03, 0x00, 0x2E, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Meter_Enable[]                                =   {0x03, 0x00, 0x30, 0x00, 0x01, 0x02, 0x00, 0x00};
-unsigned char RCD_Enable[]                                  =   {0x03, 0x00, 0x31, 0x00, 0x01, 0x02, 0x00, 0x00};
+unsigned char RCD_Enable[]                                  =   {0x03, 0x00, 0x55, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char RISO_Enable[]                                 =   {0x03, 0x00, 0x32, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char Grid_Standard[]                               =   {0x03, 0x00, 0x33, 0x00, 0x01, 0x02, 0x00, 0x00};
 unsigned char PV_Curved_Enable[]                            =   {0x03, 0x00, 0x34, 0x00, 0x01, 0x02, 0x00, 0x00};
@@ -402,16 +402,16 @@ static void inverter_app_thread(void *arg)
         {
             if (UPDATE_COUNT++ > PARAM_UPDATE_RATE && Inverter_Cmd_tail == Inverter_Cmd_head)
             {
-                if (CONFIG_PARAM_COUNT++ > CONFIG_PARAM_COUNT_MAX)
-                {
-                    CONFIG_PARAM_COUNT_MAX = 100;
-                    CONFIG_PARAM_COUNT = 0;
-                    Write_Config_Parameter();
-                }
-                else
-                {
+                // if (CONFIG_PARAM_COUNT++ > CONFIG_PARAM_COUNT_MAX)
+                // {
+                //     CONFIG_PARAM_COUNT_MAX = 100;
+                //     CONFIG_PARAM_COUNT = 0;
+                //     // Write_Config_Parameter();
+                // }
+                // else
+                // {
                     Write_Parameter();
-                }
+                // }
                 UPDATE_COUNT = 0;
             }
         }
@@ -571,97 +571,97 @@ void Write_Parameter(void)
 {
     Inverter_Cmd_t temp_cmd;
 
-    temp_cmd.ParamCmd = Run_State;                       push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_A_Voltage;                  push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_B_Voltage;                  push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_C_Voltage;                  push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_AB_Voltage;                 push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_BC_Voltage;                 push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_AC_Voltage;                 push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_A_Current;                  push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_B_Current;                  push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_C_Current;                  push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_Frequency;                  push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Run_State;                       push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_A_Voltage;                  push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_B_Voltage;                  push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_C_Voltage;                  push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_AB_Voltage;                 push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_BC_Voltage;                 push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_AC_Voltage;                 push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_A_Current;                  push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_B_Current;                  push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_C_Current;                  push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_Frequency;                  push_to_ParamCmd_buffer(&temp_cmd);
 
     temp_cmd.ParamCmd = DC_Voltage_1;                    push_to_ParamCmd_buffer(&temp_cmd);
     temp_cmd.ParamCmd = DC_Voltage_2;                    push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = DC_Voltage_3;                    push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = DC_Voltage_4;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = DC_Voltage_3;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = DC_Voltage_4;                    push_to_ParamCmd_buffer(&temp_cmd);
     temp_cmd.ParamCmd = DC_Current_1;                    push_to_ParamCmd_buffer(&temp_cmd);
     temp_cmd.ParamCmd = DC_Current_2;                    push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = DC_Current_3;                    push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = DC_Current_4;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = DC_Current_3;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = DC_Current_4;                    push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = DC_Power_1;                      push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = DC_Power_2;                      push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = DC_Power_3;                      push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = DC_Power_4;                      push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = DC_Power_1;                      push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = DC_Power_2;                      push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = DC_Power_3;                      push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = DC_Power_4;                      push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Today_Gen;                       push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Total_Gen_L;                     push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Total_Gen_H;                     push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Today_Gen;                       push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Total_Gen_L;                     push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Total_Gen_H;                     push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Day_Active_Power;                push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Day_Reactive_Power;              push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Total_Active_Power;              push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Total_Rective_Power;             push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Day_Active_Power;                push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Day_Reactive_Power;              push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Total_Active_Power;              push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Total_Rective_Power;             push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Input_Active_Power;              push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Output_Apparent_Power;           push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Output_Active_Power;             push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Output_Reactive_Power;           push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Input_Active_Power;              push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Output_Apparent_Power;           push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Output_Active_Power;             push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Output_Reactive_Power;           push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Total_Work_Time;                 push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = RadiatorT_emperature;            push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = IGBT_Temperatur;                 push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Power_Factor;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Total_Work_Time;                 push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = RadiatorT_emperature;            push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = IGBT_Temperatur;                 push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Power_Factor;                    push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = History_PV_Power;                push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = History_PV_Power;                push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Warning_Msg_Ward_1;              push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Warning_Msg_Ward_2;              push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Warning_Msg_Ward_1;              push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Warning_Msg_Ward_2;              push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Fault_Ward_1;                    push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Fault_Ward_2;                    push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Fault_Ward_3;                    push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Fault_Ward_4;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Fault_Ward_1;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Fault_Ward_2;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Fault_Ward_3;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Fault_Ward_4;                    push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Date_Time;                       push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Date_Time;                       push_to_ParamCmd_buffer(&temp_cmd);
 
-    /* Basic inverter detail */
-    temp_cmd.ParamCmd = Inverter_Type;                   push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Product_Type;                    push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Firm_Ver_Control_Bord;           push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Firm_Ver_Comm_Bord;              push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Rated_Power;                     push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = MPPT_Phase_No;                   push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Rated_Grid_Voltage_Get;          push_to_ParamCmd_buffer(&temp_cmd);
+    // /* Basic inverter detail */
+    // temp_cmd.ParamCmd = Inverter_Type;                   push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Product_Type;                    push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Firm_Ver_Control_Bord;           push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Firm_Ver_Comm_Bord;              push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Rated_Power;                     push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = MPPT_Phase_No;                   push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Rated_Grid_Voltage_Get;          push_to_ParamCmd_buffer(&temp_cmd);
 
-    /* Grid & output/load parameters */
-    temp_cmd.ParamCmd = Inverter_Output_Power_L1;        push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Inverter_Output_Power_L2;        push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Day_Load_Power;                  push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Cumulative_Load_Power;           push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Daily_Grid_Feed_In;              push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Cumulative_Grid_Feed_In;         push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Daily_Energy_Purchase;           push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Cumulative_Energy_Purchase;      push_to_ParamCmd_buffer(&temp_cmd);
+    // /* Grid & output/load parameters */
+    // temp_cmd.ParamCmd = Inverter_Output_Power_L1;        push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Inverter_Output_Power_L2;        push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Day_Load_Power;                  push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Cumulative_Load_Power;           push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Daily_Grid_Feed_In;              push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Cumulative_Grid_Feed_In;         push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Daily_Energy_Purchase;           push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Cumulative_Energy_Purchase;      push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Comm_Protocal;                   push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Inverter_Serial;                 push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Comm_Protocal;                   push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Inverter_Serial;                 push_to_ParamCmd_buffer(&temp_cmd);
 
-    /* External CT / meter power */
-    temp_cmd.ParamCmd = Grid_Power_L1;                   push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Grid_Power_L2;                   push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Limiter_Power_L1;                push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Limiter_Power_L2;                push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Load_Power_L1;                   push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Load_Power_L2;                   push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Total_Invter_Out_Power;          push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Toal_Grid_External_Power;        push_to_ParamCmd_buffer(&temp_cmd);
-    temp_cmd.ParamCmd = Total_Load_Power;                push_to_ParamCmd_buffer(&temp_cmd);
+    // /* External CT / meter power */
+    // temp_cmd.ParamCmd = Grid_Power_L1;                   push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Grid_Power_L2;                   push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Limiter_Power_L1;                push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Limiter_Power_L2;                push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Load_Power_L1;                   push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Load_Power_L2;                   push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Total_Invter_Out_Power;          push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Toal_Grid_External_Power;        push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Total_Load_Power;                push_to_ParamCmd_buffer(&temp_cmd);
 
-    temp_cmd.ParamCmd = Meter_Enable_Read;               push_to_ParamCmd_buffer(&temp_cmd);
+    // temp_cmd.ParamCmd = Meter_Enable_Read;               push_to_ParamCmd_buffer(&temp_cmd);
 }
 
 /* =========================================================================
@@ -738,16 +738,23 @@ void inverter_parameter_setter(const unsigned char *Re_cmd, unsigned char *Resp)
     unsigned int      Word_1 = 0;
     unsigned int      Word_2 = 0;
 
+
+    /* Modbus RTU response: header (3 bytes), payload, and CRC (2 bytes). */
+    for (int i = 0; i < (int)Resp[2] + 5; i++)
+    {
+        printf("Resp[%d] = 0x%02X\n", i, Resp[i]);
+    }
+
     if (Resp[2] == 2)
     {
-        Data = (unsigned long)Resp[3] << 8 | (unsigned long)Resp[4];
+        Data = (unsigned long)Resp[4] << 8 | (unsigned long)Resp[3];
     }
 
     if (Resp[2] == 4)
     {
         Word_1 = (Resp[3] << 8) | Resp[4];
         Word_2 = (Resp[5] << 8) | Resp[6];
-        Data = ((unsigned long)Word_2 << 16) | Word_1;
+        Data = ((unsigned long)Word_1 << 16) | Word_2;
     }
 
     if (Resp[2] == 6)
@@ -853,14 +860,17 @@ void inverter_parameter_setter(const unsigned char *Re_cmd, unsigned char *Resp)
     if (Param_Address == ((DC_Voltage_2[1] << 8) + DC_Voltage_2[2]))
     {
         InverterData.DCVoltage2 = Data / 10.0;
+        printf("DC Voltage2:%0.2f", InverterData.DCVoltage2);
     }
     if (Param_Address == ((DC_Voltage_3[1] << 8) + DC_Voltage_3[2]))
     {
         InverterData.DCVoltage3 = Data / 10.0;
+        printf("DC Voltage3:%0.2f", InverterData.DCVoltage3);
     }
     if (Param_Address == ((DC_Voltage_4[1] << 8) + DC_Voltage_4[2]))
     {
         InverterData.DCVoltage4 = Data / 10.0;
+        printf("DC Voltage4:%0.2f", InverterData.DCVoltage4);
     }
 
     /* ---- DC currents ---- */
@@ -868,18 +878,22 @@ void inverter_parameter_setter(const unsigned char *Re_cmd, unsigned char *Resp)
     {
         InverterData.DCCurrent1 = Data / 10.0;
         printf("DC Current1:%0.2f", InverterData.DCCurrent1);
+        
     }
     if (Param_Address == ((DC_Current_2[1] << 8) + DC_Current_2[2]))
     {
         InverterData.DCCurrent2 = Data / 10.0;
+        printf("DC Current2:%0.2f", InverterData.DCCurrent2);
     }
     if (Param_Address == ((DC_Current_3[1] << 8) + DC_Current_3[2]))
     {
         InverterData.DCCurrent3 = Data / 10.0;
+        printf("DC Current3:%0.2f", InverterData.DCCurrent3);
     }
     if (Param_Address == ((DC_Current_4[1] << 8) + DC_Current_4[2]))
     {
         InverterData.DCCurrent4 = Data / 10.0;
+        printf("DC Current4:%0.2f", InverterData.DCCurrent4);
     }
 
     /* ---- DC power (fallback = V*I when register is stale) ---- */

@@ -1,8 +1,8 @@
-build/obj/fota_f.o: fota_f.c \
+build/obj/inverterOta_app.o: inverterOta_app.c \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_rtos.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_type.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_power.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/sockets.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_data_call.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/inet.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/opt.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/lwipopts.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/cc.h \
@@ -10,10 +10,13 @@ build/obj/fota_f.o: fota_f.c \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/lwipopts_crane.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/debug.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/arch.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/ip_addr.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/def.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/ip_addr.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/ip4_addr.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/ip6_addr.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/inet6.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_http_client.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/sockets.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/inet.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/inet6.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/sys_arch.h \
@@ -23,15 +26,13 @@ build/obj/fota_f.o: fota_f.c \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/netbuf.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/pbuf.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/sys.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_data_call.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/inet.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/lwipv4v6/inet6.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_application.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_func.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_fota.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_ssl_hal.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_rtos.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_ftp_client.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/fota_f.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_application.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_func.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_log.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/main_app.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_log.h \
  D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/FileSystem.h \
- D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_sms.h
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_power.h \
+ D:\Ritik\EG800G-MNRE-Project\LTE01R07A16V03_C_SDK_A_SDK\ql-sdk\ql-application\threadx/common/include/ql_osi_def.h
